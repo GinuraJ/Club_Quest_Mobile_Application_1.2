@@ -79,7 +79,7 @@ class MainActivity : ComponentActivity() {
         val db = Room.databaseBuilder(
             context.applicationContext,
             AppDatabase::class.java,
-            "leaguess"
+            "DB"
         ).build()
 
         val leagueDao = db.leagueDoa()

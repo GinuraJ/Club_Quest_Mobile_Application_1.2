@@ -64,7 +64,7 @@ import java.net.URL
 
 class SearchClubs : ComponentActivity() {
 
-    val leagueList = mutableListOf<League>()
+    val leagueList = mutableListOf<Teams>()
 
 
     @OptIn(ExperimentalMaterial3Api::class)
@@ -276,7 +276,11 @@ class SearchClubs : ComponentActivity() {
     }
 
     suspend fun fetchBooks(keyword: String): String {
-        val url_string = "https://www.thesportsdb.com/api/v1/json/3/search_all_leagues.php?c=$keyword&s=Soccer"
+
+        var test = keyword.replace(" ", "%20")
+
+//        val url_string = "https://www.thesportsdb.com/api/v1/json/3/search_all_leagues.php?c=$test&s=Soccer"
+        val url_string = "https://www.thesportsdb.com/api/v1/json/3/search_all_teams.php?l=$test"
         val url = URL(url_string)
         val con: HttpURLConnection = url.openConnection() as HttpURLConnection
         // collecting all the JSON string
@@ -310,26 +314,57 @@ class SearchClubs : ComponentActivity() {
         val json = JSONObject(stb.toString())
         // Information about all the leagues extracted by this function
         var allLeagues = StringBuilder()
-        var jsonArray: JSONArray = json.getJSONArray("countries")
+        var jsonArray: JSONArray = json.getJSONArray("teams")
         // extract all the leagues from the JSON array
         for (i in 0 until jsonArray.length()) {
             val league: JSONObject = jsonArray.getJSONObject(i)
             // extract the required fields
+            val idTeam = league.getString("idTeam")
+            val strTeam = league.getString("strTeam")
+            val strTeamShort = league.getString("strTeamShort")
+            val strAlternate = league.optString("strAlternate", "")
+            val intFormedYear = league.getString("intFormedYear")
+
             val idLeague = league.getString("idLeague")
-            val strSport = league.getString("strSport")
             val strLeague = league.getString("strLeague")
-            val strLeagueAlternate = league.optString("strLeagueAlternate", "")
-            val strLogo = league.getString("strLogo")
+            val strStadium = league.getString("strStadium")
+            val strKeywords = league.getString("strKeywords")
+            val strStadiumThumb = league.getString("strStadiumThumb")
+
+            val strStadiumLocation = league.getString("strStadiumLocation")
+            val intStadiumCapacity = league.getString("intStadiumCapacity")
+            val strWebsite = league.getString("strWebsite")
+            val strTeamJersey = league.getString("strTeamJersey")
+            val strTeamLogo = league.getString("strTeamLogo")
 
 
-            allLeagues.append("${i + 1}---------------------\n idLeague: $idLeague \n strSport: $strSport\n strLeague: $strLeague \n")
-            if (strLeagueAlternate.isNotEmpty()) {
-                allLeagues.append(" strLeagueAlternate: $strLeagueAlternate")
-            }
+            allLeagues.append("${i + 1}---------------------\n " +
+                    "idTeam: $idTeam\n" +
+                    "strTeam: $strTeam\n" +
+                    "strTeamShort: $strTeamShort\n"+
+                    "strAlternate: $strAlternate\n"+
+                    "intFormedYear: $intFormedYear\n"+
+
+                    "strLeague: $strLeague\n"+
+                    "idLeague: $idLeague\n" +
+                    "strStadium: $strStadium\n"+
+                    "strKeywords: $strKeywords\n"+
+                    "strStadiumThumb: $strStadiumThumb\n"+
+
+                    "strStadiumLocation: $strStadiumLocation\n"+
+                    "intStadiumCapacity: $intStadiumCapacity\n"+
+                    "strWebsite: $strWebsite\n"+
+                    "strTeamJersey: $strTeamJersey\n"+
+                    "strTeamLogo: $strTeamLogo\n"
+
+            )
+//            if (strLeagueAlternate.isNotEmpty()) {
+//                allLeagues.append(" strLeagueAlternate: $strLeagueAlternate")
+//            }
             allLeagues.append("\n\n")
 
 
-            var l = League(leagueId = idLeague, strLeague = strLeague, strSport = strSport, strLeagueAlternate = strLeagueAlternate, strLogo = strLogo)
+            var l = Teams(idTeam = idTeam, Name = strTeam, strTeamShort = strTeamShort, strAlternate = strAlternate, intFormedYear = intFormedYear, strLeague = strLeague, idLeague = idLeague, strStadium = strStadium, strKeywords = strKeywords,strStadiumThumb = strStadiumThumb,strStadiumLocation = strStadiumLocation,   intStadiumCapacity = intStadiumCapacity,strWebsite = strWebsite, strTeamJersey = strTeamJersey, strTeamLogo = strTeamLogo )
             leagueList.add(l)
         }
         return allLeagues.toString()
@@ -337,13 +372,13 @@ class SearchClubs : ComponentActivity() {
 
     suspend fun retrieveWebData(){
 
-        val db = Room.databaseBuilder(applicationContext ,AppDatabase::class.java, "leaguess").build()
+        val db = Room.databaseBuilder(applicationContext ,AppDatabase::class.java, "DB").build()
 
-        val leagueDao = db.leagueDoa()
+        val teamsDoa = db.teamsDoa()
 
         for(obj in leagueList){
             GlobalScope.launch(Dispatchers.IO){
-                leagueDao.insertUser(obj)
+                teamsDoa.insertTeam(obj)
             }
         }
         leagueList.clear()

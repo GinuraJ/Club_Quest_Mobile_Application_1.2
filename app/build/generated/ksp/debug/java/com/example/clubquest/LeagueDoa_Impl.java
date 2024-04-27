@@ -45,7 +45,7 @@ public final class LeagueDoa_Impl implements LeagueDoa {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `League` (`Id`,`leagueId`,`strLeague`,`strSport`,`strLeagueAlternate`,`strLogo`) VALUES (nullif(?, 0),?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `table1` (`Id`,`leagueId`,`strLeague`,`strSport`,`strLeagueAlternate`,`strLogo`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
@@ -83,7 +83,7 @@ public final class LeagueDoa_Impl implements LeagueDoa {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR ABORT INTO `League` (`Id`,`leagueId`,`strLeague`,`strSport`,`strLeagueAlternate`,`strLogo`) VALUES (nullif(?, 0),?,?,?,?,?)";
+        return "INSERT OR ABORT INTO `table1` (`Id`,`leagueId`,`strLeague`,`strSport`,`strLeagueAlternate`,`strLogo`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
@@ -121,7 +121,7 @@ public final class LeagueDoa_Impl implements LeagueDoa {
       @Override
       @NonNull
       protected String createQuery() {
-        return "DELETE FROM `League` WHERE `Id` = ?";
+        return "DELETE FROM `table1` WHERE `Id` = ?";
       }
 
       @Override
@@ -134,7 +134,7 @@ public final class LeagueDoa_Impl implements LeagueDoa {
       @Override
       @NonNull
       public String createQuery() {
-        final String _query = "delete from league";
+        final String _query = "delete from table1";
         return _query;
       }
     };
@@ -219,79 +219,8 @@ public final class LeagueDoa_Impl implements LeagueDoa {
 
   @Override
   public Object getAll(final Continuation<? super List<League>> $completion) {
-    final String _sql = "select * from league";
+    final String _sql = "select * from table1";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
-    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<League>>() {
-      @Override
-      @NonNull
-      public List<League> call() throws Exception {
-        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-        try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "Id");
-          final int _cursorIndexOfLeagueId = CursorUtil.getColumnIndexOrThrow(_cursor, "leagueId");
-          final int _cursorIndexOfStrLeague = CursorUtil.getColumnIndexOrThrow(_cursor, "strLeague");
-          final int _cursorIndexOfStrSport = CursorUtil.getColumnIndexOrThrow(_cursor, "strSport");
-          final int _cursorIndexOfStrLeagueAlternate = CursorUtil.getColumnIndexOrThrow(_cursor, "strLeagueAlternate");
-          final int _cursorIndexOfStrLogo = CursorUtil.getColumnIndexOrThrow(_cursor, "strLogo");
-          final List<League> _result = new ArrayList<League>(_cursor.getCount());
-          while (_cursor.moveToNext()) {
-            final League _item;
-            final int _tmpId;
-            _tmpId = _cursor.getInt(_cursorIndexOfId);
-            final String _tmpLeagueId;
-            if (_cursor.isNull(_cursorIndexOfLeagueId)) {
-              _tmpLeagueId = null;
-            } else {
-              _tmpLeagueId = _cursor.getString(_cursorIndexOfLeagueId);
-            }
-            final String _tmpStrLeague;
-            if (_cursor.isNull(_cursorIndexOfStrLeague)) {
-              _tmpStrLeague = null;
-            } else {
-              _tmpStrLeague = _cursor.getString(_cursorIndexOfStrLeague);
-            }
-            final String _tmpStrSport;
-            if (_cursor.isNull(_cursorIndexOfStrSport)) {
-              _tmpStrSport = null;
-            } else {
-              _tmpStrSport = _cursor.getString(_cursorIndexOfStrSport);
-            }
-            final String _tmpStrLeagueAlternate;
-            if (_cursor.isNull(_cursorIndexOfStrLeagueAlternate)) {
-              _tmpStrLeagueAlternate = null;
-            } else {
-              _tmpStrLeagueAlternate = _cursor.getString(_cursorIndexOfStrLeagueAlternate);
-            }
-            final String _tmpStrLogo;
-            if (_cursor.isNull(_cursorIndexOfStrLogo)) {
-              _tmpStrLogo = null;
-            } else {
-              _tmpStrLogo = _cursor.getString(_cursorIndexOfStrLogo);
-            }
-            _item = new League(_tmpId,_tmpLeagueId,_tmpStrLeague,_tmpStrSport,_tmpStrLeagueAlternate,_tmpStrLogo);
-            _result.add(_item);
-          }
-          return _result;
-        } finally {
-          _cursor.close();
-          _statement.release();
-        }
-      }
-    }, $completion);
-  }
-
-  @Override
-  public Object search(final String queryString,
-      final Continuation<? super List<League>> $completion) {
-    final String _sql = "SELECT * FROM League WHERE LOWER(strLeague) LIKE ? OR LOWER(strSport) LIKE ? OR LOWER(strLeagueAlternate) LIKE ?";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 3);
-    int _argIndex = 1;
-    _statement.bindString(_argIndex, queryString);
-    _argIndex = 2;
-    _statement.bindString(_argIndex, queryString);
-    _argIndex = 3;
-    _statement.bindString(_argIndex, queryString);
     final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
     return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<League>>() {
       @Override

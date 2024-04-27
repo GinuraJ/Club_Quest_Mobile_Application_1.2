@@ -9,11 +9,11 @@
 9        android:targetSdkVersion="34" />
 10    <!-- Add network permission -->
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:5:5-67
-11-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:5:22-64
+11-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:5:5-67
+11-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:6:5-79
-12-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:6:22-76
+12-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:6:5-79
+12-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:6:22-76
 13
 14    <permission
 14-->[androidx.core:core:1.12.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/737510ee642a4a29efa79d98d744f347/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
@@ -27,87 +27,87 @@
 18-->[androidx.core:core:1.12.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/737510ee642a4a29efa79d98d744f347/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
 19
 20    <application
-20-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:8:5-49:19
+20-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:8:5-49:19
 21        android:allowBackup="true"
-21-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:9:9-35
+21-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:9:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 22-->[androidx.core:core:1.12.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/737510ee642a4a29efa79d98d744f347/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 23        android:dataExtractionRules="@xml/data_extraction_rules"
-23-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:10:9-65
+23-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:10:9-65
 24        android:debuggable="true"
 25        android:extractNativeLibs="false"
 26        android:fullBackupContent="@xml/backup_rules"
-26-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:11:9-54
+26-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:11:9-54
 27        android:icon="@mipmap/ic_launcher"
-27-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:12:9-43
+27-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:12:9-43
 28        android:label="@string/app_name"
-28-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:13:9-41
+28-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:13:9-41
 29        android:roundIcon="@mipmap/ic_launcher_round"
-29-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:14:9-54
+29-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:14:9-54
 30        android:supportsRtl="true"
-30-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:15:9-35
+30-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:15:9-35
 31        android:testOnly="true"
 32        android:theme="@style/Theme.ClubQuest" >
-32-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:16:9-47
+32-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:16:9-47
 33        <activity
-33-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:18:9-22:54
+33-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:18:9-22:54
 34            android:name="com.example.clubquest.Jerseys"
-34-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:19:13-36
+34-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:19:13-36
 35            android:exported="false"
-35-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:20:13-37
+35-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:20:13-37
 36            android:label="@string/title_activity_jerseys"
-36-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:21:13-59
+36-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:21:13-59
 37            android:theme="@style/Theme.ClubQuest" />
-37-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:22:13-51
+37-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:22:13-51
 38        <activity
-38-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:23:9-27:54
+38-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:23:9-27:54
 39            android:name="com.example.clubquest.Search"
-39-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:24:13-35
+39-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:24:13-35
 40            android:exported="false"
-40-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:25:13-37
+40-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:25:13-37
 41            android:label="@string/title_activity_search"
-41-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:26:13-58
+41-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:26:13-58
 42            android:theme="@style/Theme.ClubQuest" />
-42-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:27:13-51
+42-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:27:13-51
 43        <activity
-43-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:28:9-32:54
+43-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:28:9-32:54
 44            android:name="com.example.clubquest.SearchClubs"
-44-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:29:13-40
+44-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:29:13-40
 45            android:exported="false"
-45-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:30:13-37
+45-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:30:13-37
 46            android:label="@string/title_activity_search_clubs"
-46-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:31:13-64
+46-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:31:13-64
 47            android:theme="@style/Theme.ClubQuest" />
-47-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:32:13-51
+47-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:32:13-51
 48        <activity
-48-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:33:9-37:54
+48-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:33:9-37:54
 49            android:name="com.example.clubquest.AddLeaguesToDB"
-49-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:34:13-43
+49-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:34:13-43
 50            android:exported="false"
-50-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:35:13-37
+50-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:35:13-37
 51            android:label="@string/title_activity_add_leagues_to_db"
-51-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:36:13-69
+51-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:36:13-69
 52            android:theme="@style/Theme.ClubQuest" />
-52-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:37:13-51
+52-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:37:13-51
 53        <activity
-53-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:38:9-48:20
+53-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:38:9-48:20
 54            android:name="com.example.clubquest.MainActivity"
-54-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:39:13-41
+54-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:39:13-41
 55            android:exported="true"
-55-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:40:13-36
+55-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:40:13-36
 56            android:label="@string/app_name"
-56-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:41:13-45
+56-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:41:13-45
 57            android:theme="@style/Theme.ClubQuest" >
-57-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:42:13-51
+57-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:42:13-51
 58            <intent-filter>
-58-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:43:13-47:29
+58-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:43:13-47:29
 59                <action android:name="android.intent.action.MAIN" />
-59-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:44:17-69
-59-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:44:25-66
+59-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:44:17-69
+59-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:44:25-66
 60
 61                <category android:name="android.intent.category.LAUNCHER" />
-61-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:46:17-77
-61-->/Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/AndroidManifest.xml:46:27-74
+61-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:46:17-77
+61-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:46:27-74
 62            </intent-filter>
 63        </activity>
 64        <activity

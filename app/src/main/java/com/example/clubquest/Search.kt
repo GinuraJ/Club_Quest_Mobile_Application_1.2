@@ -79,10 +79,10 @@ class Search : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     fun SearchClubContent() {
 
-        val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "leaguess").build()
-        val leagueDao = db.leagueDoa()
+        val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "DB").build()
+        val teamsDoa = db.teamsDoa()
         var searchKeyword by remember { mutableStateOf("") }
-        var searchResults by remember { mutableStateOf<List<League>>(emptyList()) }
+        var searchResults by remember { mutableStateOf<List<Teams>>(emptyList()) }
 
         Column{
             TopAppBar(
@@ -112,7 +112,7 @@ class Search : ComponentActivity() {
                     IconButton(
                         onClick = {
                             GlobalScope.launch(Dispatchers.IO){
-                                leagueDao.deleteAll()
+                                teamsDoa.deleteAll()
                             }
                         },
                     ) {
@@ -171,7 +171,7 @@ class Search : ComponentActivity() {
                         )
 
                         Button(
-                            onClick = { searchResults = searchLeagues(leagueDao, searchKeyword.lowercase()) },
+                            onClick = { searchResults = searchLeagues(teamsDoa, searchKeyword.lowercase()) },
                             shape = RoundedCornerShape(20),
                             modifier = Modifier
                                 .padding(top = 10.dp, bottom = 10.dp)
@@ -212,19 +212,19 @@ class Search : ComponentActivity() {
 //                                        image("https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png")
 //                                    }
 
-                                    if(league.strLogo?.contains("https") == true){
-                                        image("${league.strLogo}")
+                                    if(league.strTeamLogo?.contains("https") == true){
+                                        image("${league.strTeamLogo}")
                                     }
                                     else{
                                         image("https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png")
                                     }
 
                                     Text(
-                                        text = "League ID: ${league.leagueId}\n" +
-                                                "Name: ${league.strLeague}\n" +
-                                                "Sport: ${league.strSport}\n" +
-                                                "Alternate Name: ${league.strLeagueAlternate}\n" +
-                                                "Logo: ${league.strLogo}",
+                                        text = "ID Team: ${league.idTeam}\n" +
+                                                "Name: ${league.Name}\n" +
+                                                "strTeamShort: ${league.strTeamShort}\n" +
+                                                "strAlternate: ${league.strAlternate}\n" +
+                                                "Logo: ${league.strTeamLogo}",
                                         modifier = Modifier
                                             .padding(10.dp)
                                             .fillMaxWidth()
@@ -244,9 +244,9 @@ class Search : ComponentActivity() {
     }
 
 
-    fun searchLeagues(leagueDao: LeagueDoa, keyword: String): List<League> {
+    fun searchLeagues(TeamsDAO: TeamsDAO, keyword: String): List<Teams> {
         return runBlocking {
-            leagueDao.search("%$keyword%")
+            TeamsDAO.search("%$keyword%")
         }
     }
 

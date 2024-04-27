@@ -44,9 +44,9 @@ com.example.clubquest.app-activity-ktx-1.7.0-42 /Users/ginurapremawardana/.gradl
 com.example.clubquest.app-activity-compose-1.7.0-43 /Users/ginurapremawardana/.gradle/caches/transforms-3/f316c47d9165b456873f74c813fa95f6/transformed/activity-compose-1.7.0/res
 com.example.clubquest.app-ui-geometry-release-44 /Users/ginurapremawardana/.gradle/caches/transforms-3/feaa37e204e17917440e7799271208c6/transformed/ui-geometry-release/res
 com.example.clubquest.app-material-icons-core-release-45 /Users/ginurapremawardana/.gradle/caches/transforms-3/ff05e22b45445117943bd24378d5c12a/transformed/material-icons-core-release/res
-com.example.clubquest.app-resValues-46 /Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/build/generated/res/resValues/debug
-com.example.clubquest.app-packageDebugResources-47 /Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.example.clubquest.app-packageDebugResources-48 /Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.example.clubquest.app-debug-49 /Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/build/intermediates/merged_res/debug/mergeDebugResources
-com.example.clubquest.app-debug-50 /Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/debug/res
-com.example.clubquest.app-main-51 /Users/ginurapremawardana/Downloads/Last CQ project/Club-Quest-Mobile-Application-main 2/app/src/main/res
+com.example.clubquest.app-resValues-46 /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/build/generated/res/resValues/debug
+com.example.clubquest.app-packageDebugResources-47 /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.clubquest.app-packageDebugResources-48 /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.clubquest.app-debug-49 /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.example.clubquest.app-debug-50 /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/debug/res
+com.example.clubquest.app-main-51 /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/res

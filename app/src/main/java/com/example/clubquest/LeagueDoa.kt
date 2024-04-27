@@ -10,7 +10,7 @@ import androidx.room.Query
 @Dao
 interface LeagueDoa {
 
-    @Query("select * from league")
+    @Query("select * from table1")
     suspend fun getAll(): List<League>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -19,16 +19,18 @@ interface LeagueDoa {
     @Insert
     suspend fun insertUser(league: League)
 
+//    @Insert
+//    suspend fun insertTeam(league: Teams)
+
     @Delete
     suspend fun deleteUser(league: League)
 
-    @Query("delete from league")
+    @Query("delete from table1")
     suspend fun deleteAll()
 
 //    @Query("SELECT * FROM League WHERE strLeague LIKE :queryString OR strSport LIKE :queryString OR strLeagueAlternate LIKE :queryString")
 //    suspend fun search(queryString: String): List<League>
 
-    @Query("SELECT * FROM League WHERE LOWER(strLeague) LIKE :queryString OR LOWER(strSport) LIKE :queryString OR LOWER(strLeagueAlternate) LIKE :queryString")
-    suspend fun search(queryString: String): List<League>
+
 
 }
