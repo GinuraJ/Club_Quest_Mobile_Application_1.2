@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ClubQuest</string>
+    <string name="title_activity_add_leagues_to_db">AddLeaguesToDB</string>
+    <string name="title_activity_search_clubs">SearchClubs</string>
+    <string name="title_activity_search">Search</string>
+    <string name="title_activity_jerseys">Jerseys</string>
+</resources>

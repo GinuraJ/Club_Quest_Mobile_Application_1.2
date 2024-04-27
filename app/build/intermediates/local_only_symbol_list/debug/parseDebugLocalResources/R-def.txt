@@ -1,0 +1,27 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable bg
+drawable bg1
+drawable bg2
+drawable bg3
+drawable bgsearch
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+mipmap ic_launcher
+mipmap ic_launcher_foreground
+mipmap ic_launcher_round
+string app_name
+string title_activity_add_leagues_to_db
+string title_activity_jerseys
+string title_activity_search
+string title_activity_search_clubs
+style Theme.ClubQuest
+xml backup_rules
+xml data_extraction_rules

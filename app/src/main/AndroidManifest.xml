@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Add network permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ClubQuest"
+        tools:targetApi="31">
+        <activity
+            android:name=".Jerseys"
+            android:exported="false"
+            android:label="@string/title_activity_jerseys"
+            android:theme="@style/Theme.ClubQuest" />
+        <activity
+            android:name=".Search"
+            android:exported="false"
+            android:label="@string/title_activity_search"
+            android:theme="@style/Theme.ClubQuest" />
+        <activity
+            android:name=".SearchClubs"
+            android:exported="false"
+            android:label="@string/title_activity_search_clubs"
+            android:theme="@style/Theme.ClubQuest" />
+        <activity
+            android:name=".AddLeaguesToDB"
+            android:exported="false"
+            android:label="@string/title_activity_add_leagues_to_db"
+            android:theme="@style/Theme.ClubQuest" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ClubQuest">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
