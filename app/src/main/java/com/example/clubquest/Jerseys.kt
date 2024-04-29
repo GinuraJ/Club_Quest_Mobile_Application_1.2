@@ -1,5 +1,6 @@
 package com.example.clubquest
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -30,9 +31,11 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -43,11 +46,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.FontScaling
 import androidx.compose.ui.unit.dp
+import androidx.room.Room
 import coil.compose.rememberImagePainter
 import com.example.clubquest.ui.theme.ClubQuestTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
@@ -60,14 +67,22 @@ class Jerseys : ComponentActivity() {
 
     var jersey = ""
 
-//    val teamNames: MutableList<String> = mutableListOf()
-//
-//    val jerseysLink: MutableList<List<String>> = mutableListOf()
+//    val idList = mutableListOf<String>()
+
+    val idList = mutableMapOf<String, String>()
+
+    var result =  mutableMapOf<String, String>()
+
+    var temMap = mutableMapOf<String, String>()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         jersey = intent.getStringExtra("Name").toString()
+
+
 
 
         setContent {
@@ -87,15 +102,19 @@ class Jerseys : ComponentActivity() {
     @Composable
     fun JerseyPageContent(name: String, modifier: Modifier = Modifier) {
 
-        var teamNames by remember { mutableStateOf(emptyList<String>()) }
-        var jerseysLink by remember { mutableStateOf(emptyList<List<String>>()) }
 
-        // Only fetch data if it hasn't been fetched before
-        if (teamNames.isEmpty() || jerseysLink.isEmpty()) {
-            val (names, jerseys) = searchClubsByName("$jersey")
-            teamNames = names
-            jerseysLink = jerseys
+
+        val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "DB").build()
+        val teamsDoa = db.teamsDoa()
+        var searchResults by remember { mutableStateOf<List<Teams>>(emptyList()) }
+
+
+        searchResults = searchLeagues(teamsDoa, jersey.lowercase())
+
+        for (obj in searchResults){
+            idList["${obj.Name}"] = "${obj.idTeam}"
         }
+
 
         Column {
             TopAppBar(
@@ -140,11 +159,6 @@ class Jerseys : ComponentActivity() {
                 ) {
 
 
-
-//                    searchClubsByName("$jersey")
-
-
-
                     Box(
                         modifier = Modifier
                             .padding(20.dp)
@@ -158,22 +172,23 @@ class Jerseys : ComponentActivity() {
                     }
 
 
-//                    Text(text = "${jerseysLink.get(0).get(0)}")
-
-                    val links = jerseysLink.get(0)
-
-
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
                             .background(Color.Yellow)
-//                            .verticalScroll(rememberScrollState()),
+                            .verticalScroll(rememberScrollState()),
 
                     ) {
-                        jerseyImages(links)
+//                        jerseyImages(links)
 //                        for(i:String in links){
 //                            imageHandling("$i")
 //                        }
+                        kkk()
+                        LaunchedEffect(Unit) { // Runs after composition
+                            if (!result.isEmpty()) {
+                                tt()
+                            }
+                        }
 
                     }
 
@@ -183,160 +198,149 @@ class Jerseys : ComponentActivity() {
         }
     }
 
-    private fun searchClubsByName1(searchString: String) {
-        GlobalScope.launch(Dispatchers.IO) {
-            val url = URL("https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=${searchString}")
-            val connection = url.openConnection() as HttpURLConnection
-            connection.requestMethod = "GET"
-            val responseCode = connection.responseCode
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                val response = StringBuilder()
-                val reader = BufferedReader(InputStreamReader(connection.inputStream))
-                var line: String?
-                while (reader.readLine().also { line = it } != null) {
-                    response.append(line)
-                }
-                reader.close()
-                val jsonArray = JSONObject(response.toString()).getJSONArray("teams")
-                for (i in 0 until jsonArray.length()) {
-                    val club = jsonArray.getJSONObject(i)
-                    val clubName = club.getString("strTeam")
-                    val clubId = club.getString("idTeam")
-                    val jerseys = lookupJerseysForClub(clubId)
-                    // Display jerseys to the user
-                    displayJerseys(clubName, jerseys)
-                }
-            }
-            connection.disconnect()
+    fun searchLeagues(TeamsDAO: TeamsDAO, keyword: String): List<Teams> {
+        return runBlocking {
+            TeamsDAO.search("%$keyword%")
         }
     }
 
+    suspend fun fetchBooks(keyword: String): MutableMap<String, String> {
 
-    private fun searchClubsByName(searchString: String): Pair<List<String>, List<List<String>>> {
-        val names = mutableListOf<String>()
-        val links = mutableListOf<List<String>>()
 
-        GlobalScope.launch(Dispatchers.IO) {
-            val url = URL("https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=${searchString}")
-            val connection = url.openConnection() as HttpURLConnection
-            connection.requestMethod = "GET"
-            val responseCode = connection.responseCode
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                val response = StringBuilder()
-                val reader = BufferedReader(InputStreamReader(connection.inputStream))
-                var line: String?
-                while (reader.readLine().also { line = it } != null) {
-                    response.append(line)
+        val url_string = "https://www.thesportsdb.com/api/v1/json/3/lookupequipment.php?id=$keyword"
+        val url = URL(url_string)
+        val con: HttpURLConnection = url.openConnection() as HttpURLConnection
+        // collecting all the JSON string
+        var stb = StringBuilder()
+        // run the code of the launched coroutine in a new thread
+        withContext(Dispatchers.IO) {
+            try {
+                var bf = BufferedReader(InputStreamReader(con.inputStream))
+                var line: String? = bf.readLine()
+                while (line != null) { // keep reading until no more lines of text
+                    stb.append(line + "\n")
+                    line = bf.readLine()
                 }
-                reader.close()
-                val jsonArray = JSONObject(response.toString()).getJSONArray("teams")
-                for (i in 0 until jsonArray.length()) {
-                    val club = jsonArray.getJSONObject(i)
-                    val clubName = club.getString("strTeam")
-                    val clubId = club.getString("idTeam")
-                    val jerseys = lookupJerseysForClub(clubId)
-                    names.add(clubName)
-                    links.add(jerseys)
-                }
-            }
-            connection.disconnect()
-        }
-
-
-        Thread.sleep(2000)
-
-        return Pair(names, links)
-    }
-
-
-    private fun lookupJerseysForClub(clubId: String): List<String> {
-        val url = URL("https://www.thesportsdb.com/api/v1/json/3/lookupequipment.php?id=${clubId}")
-        val connection = url.openConnection() as HttpURLConnection
-        connection.requestMethod = "GET"
-        val responseCode = connection.responseCode
-        val jerseys = mutableListOf<String>()
-        if (responseCode == HttpURLConnection.HTTP_OK) {
-            val response = StringBuilder()
-            val reader = BufferedReader(InputStreamReader(connection.inputStream))
-            var line: String?
-            while (reader.readLine().also { line = it } != null) {
-                response.append(line)
-            }
-            reader.close()
-            val jsonArray = JSONObject(response.toString()).getJSONArray("equipment")
-            for (i in 0 until jsonArray.length()) {
-                val equipment = jsonArray.getJSONObject(i)
-                val jersey = equipment.getString("strEquipment")
-                jerseys.add(jersey)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Log.i("","Error error")
+            } finally {
+                con.disconnect()
             }
         }
-        connection.disconnect()
-        return jerseys
+//        return stb.toString()
+        // Call parseJSON function here
+        val parsedData = parseJSON(stb)
+        // Return the parsed data
+        return parsedData
     }
 
-    private fun displayJerseys(clubName: String, jerseys: List<String>) {
 
-//        teamNames.add("$clubName")
-//        jerseysLink.add(jerseys)
+    fun parseJSON(stb: StringBuilder): MutableMap<String, String> {
+        val json = JSONObject(stb.toString())
+        val jsonArray: JSONArray = json.getJSONArray("equipment")
 
-        Log.i("","hello $clubName")
-        Log.i("","hello ${jerseys.get(0)}")
-        Log.i("","hello ${jerseys.get(1)}")
+        val leagueMap = mutableMapOf<String, String>()
 
+        for (i in 0 until jsonArray.length()) {
+            val league: JSONObject = jsonArray.getJSONObject(i)
 
+            val idLeague = league.getString("strSeason")
+            val strTeam = league.getString("strEquipment")
 
+            leagueMap[idLeague] = strTeam
+        }
+
+        return leagueMap
     }
 
+
+    @SuppressLint("CoroutineCreationDuringComposition")
     @Composable
-    fun jerseyImages(listItems: List<String>) {
-        LazyColumn {
-            items(listItems) { item ->
-                // Each item in the list will be displayed here
-                imageHandling("$item")
-                Spacer(modifier = Modifier.height(5.dp))
-            }
-        }
+    fun kkk(){
 
-    }
+        val coroutineScope = rememberCoroutineScope()
+        for(obj in idList){
 
-    @Composable
-    fun imageHandling(url: String){
+            coroutineScope.launch {
+                result = fetchBooks(obj.value)
 
-        Box(
-            modifier = Modifier
-                .background(Color(31, 56, 83))
-                .padding(bottom = 10.dp)
-                .height(150.dp)
-                .fillMaxWidth(),
-            contentAlignment = Alignment.Center
-        ){
-            val painter = rememberImagePainter(data = url,
-                builder = {
+
+                Log.i("","Name : ${result.size}")
+
+                Log.i("","Name : ${obj.key}")
+                Log.i("","Name : ${obj.value}")
+
+
+                for ((key, value) in result) {
+//                    Log.i("","")
+                    Log.i("","Key: $key, Value: $value")
+//                    Log.i("","")
+//                    temMap["${obj.key}"] = "${obj.value}"
+
+
 
                 }
-            )
 
-            Image(painter = painter, contentDescription = "LOGO")
+            }
+
+//            Text(text = "${obj.key}")
+//
+//            Text(text = "${temMap.size}")
+//
+//            for ((key, value) in temMap){
+//                Text(text = "$key")
+//                Text(text = "$value")
+//                Spacer(modifier = Modifier.height(10.dp))
+//            }
 
         }
 
-
     }
+
+    fun tt(){
+        Log.i("","tt ${result.size}")
+    }
+
+
 
 //    @Composable
-//    fun ScrollingColumn(links: List<String>) {
-//        // Create a scroll state
-//        val scrollState = rememberScrollbarAdapter(scrollState = androidx.compose.foundation.lazy.rememberLazyListState())
-//
-//        Column(
-//            modifier = Modifier
-//                .fillMaxSize()
-//                .background(Color.Yellow)
-//                .verticalScroll(scrollState) // Enable vertical scrolling
-//        ) {
-//            jerseyImages(links)
+//    fun jerseyImages(listItems: List<String>) {
+//        LazyColumn {
+//            items(listItems) { item ->
+//                // Each item in the list will be displayed here
+//                imageHandling("$item")
+//                Spacer(modifier = Modifier.height(5.dp))
+//            }
 //        }
+//
 //    }
+//
+//    @Composable
+//    fun imageHandling(url: String){
+//
+//        Box(
+//            modifier = Modifier
+//                .background(Color(31, 56, 83))
+//                .padding(bottom = 10.dp)
+//                .height(150.dp)
+//                .fillMaxWidth(),
+//            contentAlignment = Alignment.Center
+//        ){
+//            val painter = rememberImagePainter(data = url,
+//                builder = {
+//
+//                }
+//            )
+//
+//            Image(painter = painter, contentDescription = "LOGO")
+//
+//        }
+//
+//
+//    }
+
+
 
 
 

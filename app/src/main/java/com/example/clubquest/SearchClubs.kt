@@ -279,7 +279,6 @@ class SearchClubs : ComponentActivity() {
 
         var test = keyword.replace(" ", "%20")
 
-//        val url_string = "https://www.thesportsdb.com/api/v1/json/3/search_all_leagues.php?c=$test&s=Soccer"
         val url_string = "https://www.thesportsdb.com/api/v1/json/3/search_all_teams.php?l=$test"
         val url = URL(url_string)
         val con: HttpURLConnection = url.openConnection() as HttpURLConnection
@@ -358,9 +357,7 @@ class SearchClubs : ComponentActivity() {
                     "strTeamLogo: $strTeamLogo\n"
 
             )
-//            if (strLeagueAlternate.isNotEmpty()) {
-//                allLeagues.append(" strLeagueAlternate: $strLeagueAlternate")
-//            }
+
             allLeagues.append("\n\n")
 
 
