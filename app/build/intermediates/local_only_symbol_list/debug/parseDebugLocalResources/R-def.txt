@@ -19,7 +19,9 @@ mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string app_name
 string title_activity_add_leagues_to_db
+string title_activity_jersey_search
 string title_activity_jerseys
+string title_activity_jerseys_search
 string title_activity_search
 string title_activity_search_clubs
 style Theme.ClubQuest

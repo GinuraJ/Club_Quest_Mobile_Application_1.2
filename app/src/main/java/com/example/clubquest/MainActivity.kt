@@ -270,7 +270,7 @@ class MainActivity : ComponentActivity() {
                             ) {
                                 IconButton(
                                     onClick = {
-                                        val goToJersey = Intent(this@MainActivity, Jerseys::class.java)
+                                        val goToJersey = Intent(this@MainActivity, JerseysSearch::class.java)
                                         goToJersey.putExtra("Name","${jerseyName}")
                                         startActivity(goToJersey)
                                     },

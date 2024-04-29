@@ -4,4 +4,6 @@
     <string name="title_activity_search_clubs">SearchClubs</string>
     <string name="title_activity_search">Search</string>
     <string name="title_activity_jerseys">Jerseys</string>
+    <string name="title_activity_jersey_search">JerseySearch</string>
+    <string name="title_activity_jerseys_search">JerseysSearch</string>
 </resources>

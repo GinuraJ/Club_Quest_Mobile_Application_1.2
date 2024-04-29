@@ -27,7 +27,7 @@
 18-->[androidx.core:core:1.12.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/737510ee642a4a29efa79d98d744f347/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
 19
 20    <application
-20-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:8:5-49:19
+20-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:8:5-59:19
 21        android:allowBackup="true"
 21-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:9:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -51,152 +51,172 @@
 32-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:16:9-47
 33        <activity
 33-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:18:9-22:54
-34            android:name="com.example.clubquest.Jerseys"
-34-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:19:13-36
+34            android:name="com.example.clubquest.JerseysSearch"
+34-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:19:13-42
 35            android:exported="false"
 35-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:20:13-37
-36            android:label="@string/title_activity_jerseys"
-36-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:21:13-59
+36            android:label="@string/title_activity_jerseys_search"
+36-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:21:13-66
 37            android:theme="@style/Theme.ClubQuest" />
 37-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:22:13-51
 38        <activity
 38-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:23:9-27:54
-39            android:name="com.example.clubquest.Search"
-39-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:24:13-35
+39            android:name="com.example.clubquest.JerseySearch"
+39-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:24:13-41
 40            android:exported="false"
 40-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:25:13-37
-41            android:label="@string/title_activity_search"
-41-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:26:13-58
+41            android:label="@string/title_activity_jersey_search"
+41-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:26:13-65
 42            android:theme="@style/Theme.ClubQuest" />
 42-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:27:13-51
 43        <activity
 43-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:28:9-32:54
-44            android:name="com.example.clubquest.SearchClubs"
-44-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:29:13-40
+44            android:name="com.example.clubquest.Jerseys"
+44-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:29:13-36
 45            android:exported="false"
 45-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:30:13-37
-46            android:label="@string/title_activity_search_clubs"
-46-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:31:13-64
+46            android:label="@string/title_activity_jerseys"
+46-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:31:13-59
 47            android:theme="@style/Theme.ClubQuest" />
 47-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:32:13-51
 48        <activity
 48-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:33:9-37:54
-49            android:name="com.example.clubquest.AddLeaguesToDB"
-49-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:34:13-43
+49            android:name="com.example.clubquest.Search"
+49-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:34:13-35
 50            android:exported="false"
 50-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:35:13-37
-51            android:label="@string/title_activity_add_leagues_to_db"
-51-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:36:13-69
+51            android:label="@string/title_activity_search"
+51-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:36:13-58
 52            android:theme="@style/Theme.ClubQuest" />
 52-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:37:13-51
 53        <activity
-53-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:38:9-48:20
-54            android:name="com.example.clubquest.MainActivity"
-54-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:39:13-41
-55            android:exported="true"
-55-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:40:13-36
-56            android:label="@string/app_name"
-56-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:41:13-45
-57            android:theme="@style/Theme.ClubQuest" >
+53-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:38:9-42:54
+54            android:name="com.example.clubquest.SearchClubs"
+54-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:39:13-40
+55            android:exported="false"
+55-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:40:13-37
+56            android:label="@string/title_activity_search_clubs"
+56-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:41:13-64
+57            android:theme="@style/Theme.ClubQuest" />
 57-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:42:13-51
-58            <intent-filter>
-58-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:43:13-47:29
-59                <action android:name="android.intent.action.MAIN" />
-59-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:44:17-69
-59-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:44:25-66
-60
-61                <category android:name="android.intent.category.LAUNCHER" />
-61-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:46:17-77
-61-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:46:27-74
-62            </intent-filter>
-63        </activity>
-64        <activity
-64-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/d27848780e73118d47f1be10e2fa1f5a/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
-65            android:name="androidx.compose.ui.tooling.PreviewActivity"
-65-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/d27848780e73118d47f1be10e2fa1f5a/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
-66            android:exported="true" />
-66-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/d27848780e73118d47f1be10e2fa1f5a/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
-67        <activity
-67-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/6c176a415d251a1a34dafa9c8a949a4f/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:23:9-25:39
-68            android:name="androidx.activity.ComponentActivity"
-68-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/6c176a415d251a1a34dafa9c8a949a4f/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:24:13-63
-69            android:exported="true" />
-69-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/6c176a415d251a1a34dafa9c8a949a4f/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:25:13-36
+58        <activity
+58-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:43:9-47:54
+59            android:name="com.example.clubquest.AddLeaguesToDB"
+59-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:44:13-43
+60            android:exported="false"
+60-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:45:13-37
+61            android:label="@string/title_activity_add_leagues_to_db"
+61-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:46:13-69
+62            android:theme="@style/Theme.ClubQuest" />
+62-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:47:13-51
+63        <activity
+63-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:48:9-58:20
+64            android:name="com.example.clubquest.MainActivity"
+64-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:49:13-41
+65            android:exported="true"
+65-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:50:13-36
+66            android:label="@string/app_name"
+66-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:51:13-45
+67            android:theme="@style/Theme.ClubQuest" >
+67-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:52:13-51
+68            <intent-filter>
+68-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:53:13-57:29
+69                <action android:name="android.intent.action.MAIN" />
+69-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:54:17-69
+69-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:54:25-66
 70
-71        <service
-71-->[androidx.room:room-runtime:2.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/597de71e622747568340614a9992df74/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
-72            android:name="androidx.room.MultiInstanceInvalidationService"
-72-->[androidx.room:room-runtime:2.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/597de71e622747568340614a9992df74/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
-73            android:directBootAware="true"
-73-->[androidx.room:room-runtime:2.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/597de71e622747568340614a9992df74/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
-74            android:exported="false" />
-74-->[androidx.room:room-runtime:2.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/597de71e622747568340614a9992df74/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
-75
-76        <provider
-76-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-77            android:name="androidx.startup.InitializationProvider"
-77-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
-78            android:authorities="com.example.clubquest.androidx-startup"
-78-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
-79            android:exported="false" >
-79-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
-80            <meta-data
-80-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-81                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-81-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
-82                android:value="androidx.startup" />
-82-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
-83            <meta-data
-83-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/db72bb34ca1c3c982c5a540ff4f46b3a/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
-84                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-84-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/db72bb34ca1c3c982c5a540ff4f46b3a/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
-85                android:value="androidx.startup" />
-85-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/db72bb34ca1c3c982c5a540ff4f46b3a/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
-86            <meta-data
-86-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
-87                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-87-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
-88                android:value="androidx.startup" />
-88-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
-89        </provider>
-90
-91        <receiver
-91-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
-92            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-92-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
-93            android:directBootAware="false"
-93-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
-94            android:enabled="true"
-94-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
-95            android:exported="true"
-95-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
-96            android:permission="android.permission.DUMP" >
-96-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
-97            <intent-filter>
-97-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
-98                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-98-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
-98-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
-99            </intent-filter>
-100            <intent-filter>
-100-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
-101                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-101-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
-101-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
-102            </intent-filter>
-103            <intent-filter>
-103-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
-104                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-104-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
-104-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
-105            </intent-filter>
-106            <intent-filter>
-106-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
-107                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-107-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
-107-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
-108            </intent-filter>
-109        </receiver>
-110    </application>
-111
-112</manifest>
+71                <category android:name="android.intent.category.LAUNCHER" />
+71-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:56:17-77
+71-->/Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:56:27-74
+72            </intent-filter>
+73        </activity>
+74        <activity
+74-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/d27848780e73118d47f1be10e2fa1f5a/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+75            android:name="androidx.compose.ui.tooling.PreviewActivity"
+75-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/d27848780e73118d47f1be10e2fa1f5a/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+76            android:exported="true" />
+76-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/d27848780e73118d47f1be10e2fa1f5a/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+77        <activity
+77-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/6c176a415d251a1a34dafa9c8a949a4f/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:23:9-25:39
+78            android:name="androidx.activity.ComponentActivity"
+78-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/6c176a415d251a1a34dafa9c8a949a4f/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:24:13-63
+79            android:exported="true" />
+79-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/6c176a415d251a1a34dafa9c8a949a4f/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:25:13-36
+80
+81        <service
+81-->[androidx.room:room-runtime:2.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/597de71e622747568340614a9992df74/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+82            android:name="androidx.room.MultiInstanceInvalidationService"
+82-->[androidx.room:room-runtime:2.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/597de71e622747568340614a9992df74/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+83            android:directBootAware="true"
+83-->[androidx.room:room-runtime:2.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/597de71e622747568340614a9992df74/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+84            android:exported="false" />
+84-->[androidx.room:room-runtime:2.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/597de71e622747568340614a9992df74/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+85
+86        <provider
+86-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+87            android:name="androidx.startup.InitializationProvider"
+87-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+88            android:authorities="com.example.clubquest.androidx-startup"
+88-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+89            android:exported="false" >
+89-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+90            <meta-data
+90-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+91                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+91-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+92                android:value="androidx.startup" />
+92-->[androidx.emoji2:emoji2:1.3.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/2a5b12f6d8cb0580b00db307631f3712/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+93            <meta-data
+93-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/db72bb34ca1c3c982c5a540ff4f46b3a/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+94                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+94-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/db72bb34ca1c3c982c5a540ff4f46b3a/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+95                android:value="androidx.startup" />
+95-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/db72bb34ca1c3c982c5a540ff4f46b3a/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+96            <meta-data
+96-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+97                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+98                android:value="androidx.startup" />
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+99        </provider>
+100
+101        <receiver
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+102            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+102-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+103            android:directBootAware="false"
+103-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+104            android:enabled="true"
+104-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+105            android:exported="true"
+105-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+106            android:permission="android.permission.DUMP" >
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+107            <intent-filter>
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+108                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+109            </intent-filter>
+110            <intent-filter>
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+111                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+112            </intent-filter>
+113            <intent-filter>
+113-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+114                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+115            </intent-filter>
+116            <intent-filter>
+116-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+117                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/46a32a5edeb0e8fbeb570972ebeecac2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+118            </intent-filter>
+119        </receiver>
+120    </application>
+121
+122</manifest>

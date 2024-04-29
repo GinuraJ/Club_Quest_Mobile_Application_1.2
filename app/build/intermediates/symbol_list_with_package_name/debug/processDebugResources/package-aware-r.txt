@@ -263,7 +263,9 @@ string time_picker_minute_text_field
 string time_picker_period_toggle_description
 string time_picker_pm
 string title_activity_add_leagues_to_db
+string title_activity_jersey_search
 string title_activity_jerseys
+string title_activity_jerseys_search
 string title_activity_search
 string title_activity_search_clubs
 string tooltip_description

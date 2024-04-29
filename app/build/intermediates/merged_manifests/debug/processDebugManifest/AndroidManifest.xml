@@ -31,6 +31,16 @@
         android:testOnly="true"
         android:theme="@style/Theme.ClubQuest" >
         <activity
+            android:name="com.example.clubquest.JerseysSearch"
+            android:exported="false"
+            android:label="@string/title_activity_jerseys_search"
+            android:theme="@style/Theme.ClubQuest" />
+        <activity
+            android:name="com.example.clubquest.JerseySearch"
+            android:exported="false"
+            android:label="@string/title_activity_jersey_search"
+            android:theme="@style/Theme.ClubQuest" />
+        <activity
             android:name="com.example.clubquest.Jerseys"
             android:exported="false"
             android:label="@string/title_activity_jerseys"

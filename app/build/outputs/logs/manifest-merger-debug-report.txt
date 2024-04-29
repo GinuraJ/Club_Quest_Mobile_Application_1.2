@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:2:1-51:12
-INJECTED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:2:1-51:12
-INJECTED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:2:1-51:12
-INJECTED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:2:1-51:12
+ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:2:1-61:12
+INJECTED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:2:1-61:12
+INJECTED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:2:1-61:12
+INJECTED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:2:1-61:12
 MERGED from [io.coil-kt:coil-compose:2.6.0] /Users/ginurapremawardana/.gradle/caches/transforms-3/8dc8355cd0871e65ffdf08f64e7a0452/transformed/coil-compose-2.6.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.constraintlayout:constraintlayout-compose:1.0.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/a0bd831c724c3b4eda8a9a7485c863f5/transformed/constraintlayout-compose-1.0.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.compose.material3:material3:1.1.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/59bd9ffa8e90db6e634c71186d2c8c40/transformed/material3-1.1.1/AndroidManifest.xml:17:1-22:12
@@ -81,8 +81,8 @@ ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Applicat
 	android:name
 		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:6:22-76
 application
-ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:8:5-49:19
-INJECTED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:8:5-49:19
+ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:8:5-59:19
+INJECTED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:8:5-59:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/d27848780e73118d47f1be10e2fa1f5a/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/d27848780e73118d47f1be10e2fa1f5a/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/6c176a415d251a1a34dafa9c8a949a4f/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:22:5-26:19
@@ -123,66 +123,86 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ginu
 		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:16:9-47
 	android:dataExtractionRules
 		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:10:9-65
-activity#com.example.clubquest.Jerseys
+activity#com.example.clubquest.JerseysSearch
 ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:18:9-22:54
 	android:label
-		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:21:13-59
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:21:13-66
 	android:exported
 		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:20:13-37
 	android:theme
 		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:22:13-51
 	android:name
-		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:19:13-36
-activity#com.example.clubquest.Search
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:19:13-42
+activity#com.example.clubquest.JerseySearch
 ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:23:9-27:54
 	android:label
-		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:26:13-58
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:26:13-65
 	android:exported
 		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:25:13-37
 	android:theme
 		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:27:13-51
 	android:name
-		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:24:13-35
-activity#com.example.clubquest.SearchClubs
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:24:13-41
+activity#com.example.clubquest.Jerseys
 ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:28:9-32:54
 	android:label
-		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:31:13-64
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:31:13-59
 	android:exported
 		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:30:13-37
 	android:theme
 		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:32:13-51
 	android:name
-		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:29:13-40
-activity#com.example.clubquest.AddLeaguesToDB
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:29:13-36
+activity#com.example.clubquest.Search
 ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:33:9-37:54
 	android:label
-		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:36:13-69
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:36:13-58
 	android:exported
 		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:35:13-37
 	android:theme
 		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:37:13-51
 	android:name
-		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:34:13-43
-activity#com.example.clubquest.MainActivity
-ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:38:9-48:20
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:34:13-35
+activity#com.example.clubquest.SearchClubs
+ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:38:9-42:54
 	android:label
-		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:41:13-45
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:41:13-64
 	android:exported
-		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:40:13-36
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:40:13-37
 	android:theme
 		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:42:13-51
 	android:name
-		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:39:13-41
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:39:13-40
+activity#com.example.clubquest.AddLeaguesToDB
+ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:43:9-47:54
+	android:label
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:46:13-69
+	android:exported
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:45:13-37
+	android:theme
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:47:13-51
+	android:name
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:44:13-43
+activity#com.example.clubquest.MainActivity
+ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:48:9-58:20
+	android:label
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:51:13-45
+	android:exported
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:50:13-36
+	android:theme
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:52:13-51
+	android:name
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:49:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:43:13-47:29
+ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:53:13-57:29
 action#android.intent.action.MAIN
-ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:44:17-69
+ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:54:17-69
 	android:name
-		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:44:25-66
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:54:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:46:17-77
+ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:56:17-77
 	android:name
-		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:46:27-74
+		ADDED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml:56:27-74
 uses-sdk
 INJECTED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/ginurapremawardana/Desktop/CQ-Final/Club_Quest_Mobile_Application_1.2/app/src/main/AndroidManifest.xml

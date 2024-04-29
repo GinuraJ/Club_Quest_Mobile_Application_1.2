@@ -16,6 +16,16 @@
         android:theme="@style/Theme.ClubQuest"
         tools:targetApi="31">
         <activity
+            android:name=".JerseysSearch"
+            android:exported="false"
+            android:label="@string/title_activity_jerseys_search"
+            android:theme="@style/Theme.ClubQuest" />
+        <activity
+            android:name=".JerseySearch"
+            android:exported="false"
+            android:label="@string/title_activity_jersey_search"
+            android:theme="@style/Theme.ClubQuest" />
+        <activity
             android:name=".Jerseys"
             android:exported="false"
             android:label="@string/title_activity_jerseys"

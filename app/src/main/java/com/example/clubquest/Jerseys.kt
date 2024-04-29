@@ -8,21 +8,20 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -31,7 +30,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -42,17 +40,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.FontScaling
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.room.Room
 import coil.compose.rememberImagePainter
 import com.example.clubquest.ui.theme.ClubQuestTheme
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
@@ -73,7 +68,9 @@ class Jerseys : ComponentActivity() {
 
     var result =  mutableMapOf<String, String>()
 
-    var temMap = mutableMapOf<String, String>()
+    var fMap = mutableMapOf<String,Map<String,String>>()
+
+    var fMap2 = mapOf<String,Map<String,String>>()
 
 
 
@@ -120,7 +117,7 @@ class Jerseys : ComponentActivity() {
             TopAppBar(
                 title = {
                     Text(
-                        text = "Search Club",
+                        text = "Jerseys",
                         textAlign = TextAlign.Center,
                         modifier = Modifier
                             .fillMaxWidth()
@@ -158,24 +155,9 @@ class Jerseys : ComponentActivity() {
 
                 ) {
 
-
-                    Box(
-                        modifier = Modifier
-                            .padding(20.dp)
-                    ) {
-                        Text(
-                            text = "$jersey",
-                            modifier = Modifier
-//                                .background(Color.Yellow)
-                                .fillMaxWidth(),
-                        )
-                    }
-
-
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(Color.Yellow)
                             .verticalScroll(rememberScrollState()),
 
                     ) {
@@ -183,11 +165,16 @@ class Jerseys : ComponentActivity() {
 //                        for(i:String in links){
 //                            imageHandling("$i")
 //                        }
-                        kkk()
-                        LaunchedEffect(Unit) { // Runs after composition
-                            if (!result.isEmpty()) {
-                                tt()
-                            }
+
+                        var done by remember { mutableStateOf(false) }
+
+                        kkk { result ->
+                            tt(result)
+                            done = true
+                        }
+
+                        if(done == true){
+                            display()
                         }
 
                     }
@@ -254,97 +241,113 @@ class Jerseys : ComponentActivity() {
         return leagueMap
     }
 
-
     @SuppressLint("CoroutineCreationDuringComposition")
     @Composable
-    fun kkk(){
+    fun kkk(onResultReady: (Map<String, String>) -> Unit){
 
         val coroutineScope = rememberCoroutineScope()
         for(obj in idList){
 
+            var temMap =  mutableMapOf<String, String>()
+
             coroutineScope.launch {
                 result = fetchBooks(obj.value)
 
-
-                Log.i("","Name : ${result.size}")
-
-                Log.i("","Name : ${obj.key}")
-                Log.i("","Name : ${obj.value}")
-
+                Log.i("","result size : ${result.size}")
+                Log.i("","name : ${obj.key}")
+                Log.i("","team id : ${obj.value}")
 
                 for ((key, value) in result) {
-//                    Log.i("","")
                     Log.i("","Key: $key, Value: $value")
-//                    Log.i("","")
-//                    temMap["${obj.key}"] = "${obj.value}"
-
-
-
+                    temMap["${key}"] = "${value}"
                 }
 
+                fMap["${obj.key}"] = temMap
+
+//                temMap.add(result)
+
+                // Once result is ready, trigger the callback
+                onResultReady(result)
             }
 
-//            Text(text = "${obj.key}")
-//
-//            Text(text = "${temMap.size}")
-//
-//            for ((key, value) in temMap){
-//                Text(text = "$key")
-//                Text(text = "$value")
-//                Spacer(modifier = Modifier.height(10.dp))
-//            }
-
         }
-
     }
 
-    fun tt(){
+    fun tt(result: Map<String, String>){
         Log.i("","tt ${result.size}")
+        fMap2 = fMap
     }
 
+    @Composable
+    fun display(){
+
+        for((key, value ) in fMap2){
 
 
-//    @Composable
-//    fun jerseyImages(listItems: List<String>) {
-//        LazyColumn {
-//            items(listItems) { item ->
-//                // Each item in the list will be displayed here
-//                imageHandling("$item")
-//                Spacer(modifier = Modifier.height(5.dp))
-//            }
-//        }
-//
-//    }
-//
-//    @Composable
-//    fun imageHandling(url: String){
-//
-//        Box(
-//            modifier = Modifier
-//                .background(Color(31, 56, 83))
-//                .padding(bottom = 10.dp)
-//                .height(150.dp)
-//                .fillMaxWidth(),
-//            contentAlignment = Alignment.Center
-//        ){
-//            val painter = rememberImagePainter(data = url,
-//                builder = {
-//
-//                }
-//            )
-//
-//            Image(painter = painter, contentDescription = "LOGO")
-//
-//        }
-//
-//
-//    }
+            Box(
+                modifier = Modifier
+                    .padding(10.dp)
+                    .fillMaxWidth()
 
+            ) {
+                Text(
+                    text = "${key}",
+                    fontSize = 30.sp,
+                    modifier = Modifier
+                        .padding(10.dp)
+                )
+            }
 
+            for((date,link) in value){
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Color(207, 92, 54)),
+                    verticalAlignment = Alignment.CenterVertically
 
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .weight(1f),
+                        verticalArrangement = Arrangement.Center,
+                    ) {
+                        Text(
+                            text = "${date}",
+                            fontSize = 22.sp,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier
+                                .padding(20.dp)
+                        )
+                    }
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .weight(1.3f)
+                            .background(Color(5, 5, 23))
+                    ){
+                        imageHandling(url = "${link}")
+                    }
+                }
+            }
+            Spacer(modifier = Modifier.height(10.dp))
+        }
+    }
 
-
-
+    @Composable
+    fun imageHandling(url: String){
+        Box(
+            modifier = Modifier
+                .padding(bottom = 10.dp, top = 20.dp)
+                .height(150.dp)
+                .fillMaxWidth(),
+            contentAlignment = Alignment.Center
+        ){
+            val painter = rememberImagePainter(data = url,
+                builder = {}
+            )
+            Image(painter = painter, contentDescription = "LOGO")
+        }
+    }
 }
 
 
