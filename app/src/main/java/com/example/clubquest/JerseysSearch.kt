@@ -30,6 +30,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -49,6 +50,7 @@ import coil.compose.rememberImagePainter
 import com.example.clubquest.ui.theme.ClubQuestTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
@@ -64,9 +66,13 @@ class JerseysSearch : ComponentActivity() {
 
     var jersey = ""
 
-    var allLeaguesMain = mutableListOf<String>()
+    var teamIDNameMap = mutableMapOf<String, String>()
 
-    var teamIDList = mutableListOf<String>()
+    var allLeaguesName = mutableListOf<String>()
+
+    var teamsDateID = mutableMapOf<String,String>()
+
+    var jerseyMap_name_linkMap = mutableMapOf<String,Map<String,String>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -90,6 +96,7 @@ class JerseysSearch : ComponentActivity() {
         }
     }
 
+    @SuppressLint("CoroutineCreationDuringComposition")
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun JerseyPageContent(name: String, modifier: Modifier = Modifier) {
@@ -144,17 +151,102 @@ class JerseysSearch : ComponentActivity() {
 
                         ) {
 
+                        var done by remember { mutableStateOf(false) }
+
+                        val coroutineScope = rememberCoroutineScope()
+
+                        LaunchedEffect(Unit) {
+                            coroutineScope.launch {
+                                allLeaguesName = fetchLeagues()
+                                Log.i("","all leagues list: ${allLeaguesName}")
+
+                                for (i in allLeaguesName) {
+                                    fetchTeams("$i")
+                                }
+
+                                Log.i("","${teamIDNameMap.size}")
+
+                                for ((id,name) in teamIDNameMap) {
+                                    var jMap = fetchJerseys("$id")
+                                    jerseyMap_name_linkMap["$name"] = jMap
+                                }
+
+                                Log.i("","JerseyMapList size = ${jerseyMap_name_linkMap.size}")
+
+                                done = true
+                            }
+                        }
+
+                        if (done) {
+
+//                            for ((name,linkList) in jerseyMap_name_linkMap){
+//
+//                                Text(text = "$name")
+//
+//                                for ((date,link) in linkList){
+//                                    Text(text = "${date}: ${link}")
+//                                }
+//
+//                            }
 
 
-//                        viewAllLeagues()
 
-                        allLeaguesMain.add("English Premier League")
-                        allLeaguesMain.add("English League Championship")
-                        allLeaguesMain.add("Scottish Premier League")
+                            for ((name,linkList) in jerseyMap_name_linkMap){
 
 
+                                Box(
+                                    modifier = Modifier
+                                        .padding(10.dp)
+                                        .fillMaxWidth()
 
-                        collectTeamIDs()
+                                ) {
+                                    Text(
+                                        text = "${name}",
+                                        fontSize = 30.sp,
+                                        modifier = Modifier
+                                            .padding(10.dp)
+                                    )
+                                }
+
+                                for ((date,link) in linkList){
+                                    Row(
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .background(Color(207, 92, 54)),
+                                        verticalAlignment = Alignment.CenterVertically
+
+                                    ) {
+                                        Column(
+                                            modifier = Modifier
+                                                .weight(1f),
+                                            verticalArrangement = Arrangement.Center,
+                                        ) {
+                                            Text(
+                                                text = "${date}",
+                                                fontSize = 22.sp,
+                                                fontWeight = FontWeight.Bold,
+                                                modifier = Modifier
+                                                    .padding(20.dp)
+                                            )
+                                        }
+                                        Box(
+                                            modifier = Modifier
+                                                .fillMaxWidth()
+                                                .weight(1.3f)
+                                                .background(Color(5, 5, 23))
+                                        ){
+                                            imageHandling(url = "${link}")
+                                        }
+                                    }
+                                }
+                                Spacer(modifier = Modifier.height(10.dp))
+                            }
+
+
+                        }
+
+
+
 
 
                     }
@@ -165,46 +257,6 @@ class JerseysSearch : ComponentActivity() {
         }
     }
 
-
-
-
-    @SuppressLint("CoroutineCreationDuringComposition")
-    @Composable
-    fun viewAllLeagues(){
-
-        val coroutineScope = rememberCoroutineScope()
-
-        coroutineScope.launch{
-
-            allLeaguesMain = fetchLeagues()
-            Log.i("","all leagues length ${allLeaguesMain.size}")
-
-
-        }
-
-    }
-
-    @SuppressLint("CoroutineCreationDuringComposition")
-    @Composable
-    fun collectTeamIDs(){
-
-        val coroutineScope = rememberCoroutineScope()
-
-        coroutineScope.launch{
-
-            for (i in allLeaguesMain){
-                fetchTeams("${i}")
-            }
-
-            Log.i("","length id list: ${teamIDList.size}")
-
-            for (j in teamIDList){
-                Log.i("","$j")
-            }
-
-        }
-
-    }
 
 
     suspend fun fetchLeagues(): MutableList<String> {
@@ -307,7 +359,7 @@ class JerseysSearch : ComponentActivity() {
                 val idTeam = league.getString("idTeam")
 
                 if (strTeam.lowercase().contains("${jersey}")){
-                    teamIDList.add("${idTeam}")
+                    teamIDNameMap["${idTeam}"] = "${strTeam}"
                 }
 
 //            allLeague.add("${strLeague}")
@@ -321,7 +373,102 @@ class JerseysSearch : ComponentActivity() {
 
     }
 
+    suspend fun fetchJerseys(keyword: String): MutableMap<String, String> {
 
+        val url_string = "https://www.thesportsdb.com/api/v1/json/3/lookupequipment.php?id=$keyword"
+        val url = URL(url_string)
+        val con: HttpURLConnection = url.openConnection() as HttpURLConnection
+        // collecting all the JSON string
+        var stb = StringBuilder()
+        // run the code of the launched coroutine in a new thread
+        withContext(Dispatchers.IO) {
+            try {
+                var bf = BufferedReader(InputStreamReader(con.inputStream))
+                var line: String? = bf.readLine()
+                while (line != null) { // keep reading until no more lines of text
+                    stb.append(line + "\n")
+                    line = bf.readLine()
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Log.i("","Error error")
+            } finally {
+                con.disconnect()
+            }
+        }
+        // Call parseJSON function here
+        val parsedData = parseJSONjerseys(stb)
+        // Return the parsed data
+        return parsedData
+    }
+
+    fun parseJSONjerseys(stb: StringBuilder): MutableMap<String, String> {
+        val json = JSONObject(stb.toString())
+
+        // Check if the key "equipment" exists in the JSON object
+        if (json.has("equipment")) {
+            val jsonArray: JSONArray? = json.optJSONArray("equipment")
+
+            // Check if the value associated with the key "equipment" is not null and is a JSON array
+            if (jsonArray != null) {
+                val leagueMap = mutableMapOf<String, String>()
+
+                for (i in 0 until jsonArray.length()) {
+                    val league: JSONObject = jsonArray.getJSONObject(i)
+
+                    val idLeague = league.getString("strSeason")
+                    val strTeam = league.getString("strEquipment")
+
+                    leagueMap[idLeague] = strTeam
+                }
+
+                return leagueMap
+            } else {
+                Log.e("JerseysSearch", "Key 'equipment' exists but is not a valid JSON array")
+            }
+        } else {
+            Log.e("JerseysSearch", "Key 'equipment' does not exist in the JSON object")
+        }
+
+        // Return an empty map if there was an error or the key "equipment" does not exist
+        return mutableMapOf()
+    }
+
+
+//    fun parseJSONjerseys(stb: StringBuilder): MutableMap<String, String> {
+//        val json = JSONObject(stb.toString())
+//        val jsonArray: JSONArray = json.getJSONArray("equipment")
+//
+//        val leagueMap = mutableMapOf<String, String>()
+//
+//        for (i in 0 until jsonArray.length()) {
+//            val league: JSONObject = jsonArray.getJSONObject(i)
+//
+//            val idLeague = league.getString("strSeason")
+//            val strTeam = league.getString("strEquipment")
+//
+//            leagueMap[idLeague] = strTeam
+//        }
+//
+//        return leagueMap
+//    }
+
+
+    @Composable
+    fun imageHandling(url: String){
+        Box(
+            modifier = Modifier
+                .padding(bottom = 10.dp, top = 20.dp)
+                .height(150.dp)
+                .fillMaxWidth(),
+            contentAlignment = Alignment.Center
+        ){
+            val painter = rememberImagePainter(data = url,
+                builder = {}
+            )
+            Image(painter = painter, contentDescription = "LOGO")
+        }
+    }
 
 
 
