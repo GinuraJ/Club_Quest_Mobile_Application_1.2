@@ -8,6 +8,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -179,18 +180,6 @@ class JerseysSearch : ComponentActivity() {
 
                         if (done) {
 
-//                            for ((name,linkList) in jerseyMap_name_linkMap){
-//
-//                                Text(text = "$name")
-//
-//                                for ((date,link) in linkList){
-//                                    Text(text = "${date}: ${link}")
-//                                }
-//
-//                            }
-
-
-
                             for ((name,linkList) in jerseyMap_name_linkMap){
 
 
@@ -208,37 +197,55 @@ class JerseysSearch : ComponentActivity() {
                                     )
                                 }
 
-                                for ((date,link) in linkList){
-                                    Row(
+                                if(linkList.isEmpty()){
+                                    Box(
                                         modifier = Modifier
+                                            .height(100.dp)
                                             .fillMaxWidth()
-                                            .background(Color(207, 92, 54)),
-                                        verticalAlignment = Alignment.CenterVertically
-
+                                            .background(Color.Black),
+                                        contentAlignment = Alignment.Center
                                     ) {
-                                        Column(
-                                            modifier = Modifier
-                                                .weight(1f),
-                                            verticalArrangement = Arrangement.Center,
-                                        ) {
-                                            Text(
-                                                text = "${date}",
-                                                fontSize = 22.sp,
-                                                fontWeight = FontWeight.Bold,
-                                                modifier = Modifier
-                                                    .padding(20.dp)
-                                            )
-                                        }
-                                        Box(
+                                        Text(
+                                            text = "Not Available",
+                                            textAlign = TextAlign.Center,
+                                            color = Color.White,
+                                        )
+                                    }
+                                }else{
+
+                                    for ((date,link) in linkList){
+                                        Row(
                                             modifier = Modifier
                                                 .fillMaxWidth()
-                                                .weight(1.3f)
-                                                .background(Color(5, 5, 23))
-                                        ){
-                                            imageHandling(url = "${link}")
+                                                .background(Color(207, 92, 54)),
+                                            verticalAlignment = Alignment.CenterVertically
+
+                                        ) {
+                                            Column(
+                                                modifier = Modifier
+                                                    .weight(1f),
+                                                verticalArrangement = Arrangement.Center,
+                                            ) {
+                                                Text(
+                                                    text = "${date}",
+                                                    fontSize = 22.sp,
+                                                    fontWeight = FontWeight.Bold,
+                                                    modifier = Modifier
+                                                        .padding(20.dp)
+                                                )
+                                            }
+                                            Box(
+                                                modifier = Modifier
+                                                    .fillMaxWidth()
+                                                    .weight(1.3f)
+                                                    .background(Color(5, 5, 23))
+                                            ){
+                                                imageHandling(url = "${link}")
+                                            }
                                         }
                                     }
                                 }
+
                                 Spacer(modifier = Modifier.height(10.dp))
                             }
 
@@ -298,8 +305,12 @@ class JerseysSearch : ComponentActivity() {
             val league: JSONObject = jsonArray.getJSONObject(i)
 
             val strLeague = league.getString("strLeague")
+            val strSport = league.getString("strSport")
 
-            allLeague.add("${strLeague}")
+            if(strSport == "Soccer"){
+                allLeague.add("${strLeague}")
+            }
+
         }
 
         return allLeague
@@ -343,35 +354,64 @@ class JerseysSearch : ComponentActivity() {
         }
     }
 
-    fun parseJSONteams(stb: StringBuilder){
+//    fun parseJSONteams(stb: StringBuilder){
+//
+//
+//        try{
+//            val json = JSONObject(stb.toString())
+//            val jsonArray: JSONArray = json.getJSONArray("teams")
+//
+////        val allTeams = mutableListOf<String>()
+//
+//            for (i in 0 until jsonArray.length()) {
+//                val league: JSONObject = jsonArray.getJSONObject(i)
+//
+//                val strTeam = league.getString("strTeam")
+//                val idTeam = league.getString("idTeam")
+//
+//                if (strTeam.lowercase().contains("${jersey}")){
+//                    teamIDNameMap["${idTeam}"] = "${strTeam}"
+//                    Log.i("","${idTeam} ${strTeam}")
+//                }
+//
+////            allLeague.add("${strLeague}")
+//            }
+//        }catch (e: JSONException) {
+//            e.printStackTrace()
+//            Log.e("JerseysSearch", "Error parsing JSON teams: ${e.message}")
+//        }
+//
+//
+//
+//    }
 
-
-        try{
+    fun parseJSONteams(stb: StringBuilder) {
+        try {
             val json = JSONObject(stb.toString())
-            val jsonArray: JSONArray = json.getJSONArray("teams")
 
-//        val allTeams = mutableListOf<String>()
+            if (json.has("teams")) {
+                val jsonArray: JSONArray = json.getJSONArray("teams")
 
-            for (i in 0 until jsonArray.length()) {
-                val league: JSONObject = jsonArray.getJSONObject(i)
+                for (i in 0 until jsonArray.length()) {
+                    val league: JSONObject = jsonArray.getJSONObject(i)
 
-                val strTeam = league.getString("strTeam")
-                val idTeam = league.getString("idTeam")
+                    val strTeam = league.optString("strTeam", "")
+                    val idTeam = league.optString("idTeam", "")
 
-                if (strTeam.lowercase().contains("${jersey}")){
-                    teamIDNameMap["${idTeam}"] = "${strTeam}"
+                    if (strTeam.lowercase().contains("${jersey.lowercase()}")) {
+                        teamIDNameMap["$idTeam"] = strTeam
+                        Log.i("", "$idTeam $strTeam")
+                    }
                 }
-
-//            allLeague.add("${strLeague}")
+            } else {
+                Log.e("JerseysSearch", "JSON object does not contain 'teams' key")
             }
-        }catch (e: JSONException) {
+        } catch (e: JSONException) {
             e.printStackTrace()
             Log.e("JerseysSearch", "Error parsing JSON teams: ${e.message}")
         }
-
-
-
     }
+
 
     suspend fun fetchJerseys(keyword: String): MutableMap<String, String> {
 
@@ -406,7 +446,7 @@ class JerseysSearch : ComponentActivity() {
         val json = JSONObject(stb.toString())
 
         // Check if the key "equipment" exists in the JSON object
-        if (json.has("equipment")) {
+        if (json.has("equipment") && "equipment" != null) {
             val jsonArray: JSONArray? = json.optJSONArray("equipment")
 
             // Check if the value associated with the key "equipment" is not null and is a JSON array
