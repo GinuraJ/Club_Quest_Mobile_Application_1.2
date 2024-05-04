@@ -65,6 +65,12 @@ import java.net.URL
 class SearchClubs : ComponentActivity() {
 
     val leagueList = mutableListOf<Teams>()
+    val list = mutableListOf<String>()
+
+    var orientation = false
+
+
+    var leagueListAfter = ArrayList<String>()
 
 
     @OptIn(ExperimentalMaterial3Api::class)
@@ -78,9 +84,49 @@ class SearchClubs : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     SearchClubContent()
+
+//                    if (savedInstanceState != null) {
+//                        val leagueList1 = savedInstanceState.getStringArrayList("leagueList")
+//                        // Now you have your list restored from savedInstanceState
+//
+//                        if (leagueList1 != null) {
+//                            for (i in leagueList1.indices step 15) {
+//                                val sublist = leagueList1.subList(i, minOf(i + 15, leagueList.size))
+//
+//                                var l = Teams(idTeam = sublist[0], Name = sublist[1], strTeamShort = sublist[2], strAlternate = sublist[3], intFormedYear = sublist[4], strLeague = sublist[5], idLeague = sublist[6], strStadium = sublist[7], strKeywords = sublist[8],strStadiumThumb = sublist[9],strStadiumLocation = sublist[10],   intStadiumCapacity = sublist[11],strWebsite = sublist[12], strTeamJersey = sublist[13], strTeamLogo = sublist[14] )
+//                                leagueList.add(l)
+//
+//                            }
+//                        }
+//
+//                        if (leagueList != null) {
+//                            Log.i("","rrrr ${leagueList.size}")
+//                        }
+//                    }
+
+
+
                 }
             }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putStringArrayList("leagueList", ArrayList(list))
+        outState.putBoolean("orientation", true)
+
+
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        leagueListAfter = savedInstanceState.getStringArrayList("leagueList")!!
+        orientation = savedInstanceState.getBoolean("orientation",false)
+
+
     }
 
 
@@ -96,6 +142,8 @@ class SearchClubs : ComponentActivity() {
         val scope = rememberCoroutineScope()
 
         var showDialog by remember { mutableStateOf(false) }
+
+        var showDialogForRetrieveData by remember { mutableStateOf(false) }
 
         // Function to show the dialog
         fun showAlertDialog() {
@@ -184,15 +232,21 @@ class SearchClubs : ComponentActivity() {
                         Button(
                             onClick = {
 
+
+
                                 scope.launch {
-                                    // Set loading state
-//                                    isLoading = true
-                                    // Fetch data
-                                    val result = fetchBooks(keyword)
-                                    // Set bookInfoDisplay with result
-                                    bookInfoDisplay = result
-                                    // Reset loading state
-//                                    isLoading = false
+                                    try {
+
+                                        // Fetch data
+                                        val result = fetchBooks(keyword)
+
+                                        bookInfoDisplay = result
+
+                                    } catch (e: Exception) {
+                                        Log.i("","incorrect incorrect")
+                                        showDialogForRetrieveData = true
+                                        keyword = ""
+                                    }
                                 }
 
                                 Log.i("","Ginura ${leagueList.size}")
@@ -211,6 +265,22 @@ class SearchClubs : ComponentActivity() {
                                 fontSize = 18.sp,
                                 modifier = Modifier
                                     .padding(10.dp)
+                            )
+                        }
+
+                        if (showDialogForRetrieveData) {
+                            AlertDialog(
+                                onDismissRequest = { showDialogForRetrieveData = false },
+                                title = { Text("Something wrong") },
+                                text = { Text("Data did not retrieve from the web. Please check the League name!!") },
+                                confirmButton = {
+                                    TextButton(
+                                        onClick = { showDialogForRetrieveData = false },
+                                        colors = ButtonDefaults.textButtonColors(contentColor = Color.Red)
+                                    ) {
+                                        Text("Close")
+                                    }
+                                }
                             )
                         }
 
@@ -262,13 +332,73 @@ class SearchClubs : ComponentActivity() {
                             .fillMaxWidth()
                             .weight(1.5f)
                     ) {
-                        Text(
-                            modifier = Modifier
+                        
+                        if(orientation == false){
+                            Text(
+                                modifier = Modifier
+                                    .padding(10.dp)
+                                .background(Color.Yellow)
+                                    .verticalScroll(rememberScrollState()),
+                                text = "${bookInfoDisplay}"
+                            )
+                        }else{
+
+                            for (i in leagueListAfter.indices step 15) {
+                                val sublist = leagueListAfter.subList(i, minOf(i + 15, leagueListAfter.size))
+
+                                var l = Teams(idTeam = sublist[0], Name = sublist[1], strTeamShort = sublist[2], strAlternate = sublist[3], intFormedYear = sublist[4], strLeague = sublist[5], idLeague = sublist[6], strStadium = sublist[7], strKeywords = sublist[8],strStadiumThumb = sublist[9],strStadiumLocation = sublist[10],   intStadiumCapacity = sublist[11],strWebsite = sublist[12], strTeamJersey = sublist[13], strTeamLogo = sublist[14] )
+                                leagueList.add(l)
+
+                                var i = mutableListOf(sublist[0],sublist[1],sublist[2],sublist[3],sublist[4],sublist[5],sublist[6],sublist[7],sublist[8],sublist[9],sublist[10],sublist[11],sublist[12],sublist[13],sublist[14])
+
+                                for(e in i){
+                                    list.add(e)
+                                }
+
+                            }
+
+                            var displayText2 = StringBuilder()
+
+                            var i = 0
+
+                            for (e in leagueList){
+//                                displayText2.append("${e.idTeam}\n ${e.Name}\n ${e.strLeague}\n ${e.strAlternate}")
+
+                                i++;
+                                displayText2.append("${i}---------------------\n " +
+                                        "idTeam: ${e.idTeam}\n" +
+                                        "strTeam: ${e.Name}\n" +
+                                        "strTeamShort: ${e.strTeamShort}\n"+
+                                        "strAlternate: ${e.strAlternate}\n"+
+                                        "intFormedYear: ${e.intFormedYear}\n"+
+
+                                        "strLeague: ${e.strLeague}\n"+
+                                        "idLeague: ${e.idLeague}\n" +
+                                        "strStadium: ${e.strStadium}\n"+
+                                        "strKeywords: ${e.strKeywords}\n"+
+                                        "strStadiumThumb: ${e.strStadiumThumb}\n"+
+
+                                        "strStadiumLocation: ${e.strStadiumLocation}\n"+
+                                        "intStadiumCapacity: ${e.intStadiumCapacity}\n"+
+                                        "strWebsite: ${e.strWebsite}\n"+
+                                        "strTeamJersey: ${e.strTeamJersey}\n"+
+                                        "strTeamLogo: ${e.strTeamLogo}\n"
+
+                                )
+                                displayText2.append("\n\n")
+
+                            }
+
+
+                            Text(modifier = Modifier
+                                .fillMaxWidth()
                                 .padding(10.dp)
                                 .background(Color.Yellow)
                                 .verticalScroll(rememberScrollState()),
-                            text = "${bookInfoDisplay}"
-                        )
+                                text = "${displayText2}")
+                        }
+
+                        
                     }
                 }
             }
@@ -363,6 +493,13 @@ class SearchClubs : ComponentActivity() {
 
             var l = Teams(idTeam = idTeam, Name = strTeam, strTeamShort = strTeamShort, strAlternate = strAlternate, intFormedYear = intFormedYear, strLeague = strLeague, idLeague = idLeague, strStadium = strStadium, strKeywords = strKeywords,strStadiumThumb = strStadiumThumb,strStadiumLocation = strStadiumLocation,   intStadiumCapacity = intStadiumCapacity,strWebsite = strWebsite, strTeamJersey = strTeamJersey, strTeamLogo = strTeamLogo )
             leagueList.add(l)
+
+            var i = mutableListOf(idTeam,strTeam,strTeamShort,strAlternate,intFormedYear,strLeague,idLeague,strStadium,strKeywords,strStadiumThumb,strStadiumLocation,intStadiumCapacity,strWebsite,strTeamJersey,strTeamLogo)
+
+            for(e in i){
+                list.add(e)
+            }
+
         }
         return allLeagues.toString()
     }
