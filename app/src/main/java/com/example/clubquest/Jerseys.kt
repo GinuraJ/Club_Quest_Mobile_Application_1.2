@@ -101,7 +101,7 @@ class Jerseys : ComponentActivity() {
 
 
 
-        val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "DB").build()
+        val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "DB-final").build()
         val teamsDoa = db.teamsDoa()
         var searchResults by remember { mutableStateOf<List<Teams>>(emptyList()) }
 

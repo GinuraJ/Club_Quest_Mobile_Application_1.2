@@ -506,7 +506,7 @@ class SearchClubs : ComponentActivity() {
 
     suspend fun retrieveWebData(){
 
-        val db = Room.databaseBuilder(applicationContext ,AppDatabase::class.java, "DB").build()
+        val db = Room.databaseBuilder(applicationContext ,AppDatabase::class.java, "DB-final").build()
 
         val teamsDoa = db.teamsDoa()
 

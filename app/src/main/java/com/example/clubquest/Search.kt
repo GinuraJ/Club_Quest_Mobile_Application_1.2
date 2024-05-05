@@ -79,7 +79,7 @@ class Search : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     fun SearchClubContent() {
 
-        val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "DB").build()
+        val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "DB-final").build()
         val teamsDoa = db.teamsDoa()
         var searchKeyword by remember { mutableStateOf("") }
         var searchResults by remember { mutableStateOf<List<Teams>>(emptyList()) }
@@ -203,15 +203,6 @@ class Search : ComponentActivity() {
                                         .background(Color.White)
 
                                 ) {
-//                                    if(league.strLogo != ""){
-//                                        image("${league.strLogo}")
-//                                    }else if(league.strLogo == "null"){
-//                                        image("https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png")
-//                                    }
-//                                    else{
-//                                        image("https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png")
-//                                    }
-
                                     if(league.strTeamLogo?.contains("https") == true){
                                         image("${league.strTeamLogo}")
                                     }
