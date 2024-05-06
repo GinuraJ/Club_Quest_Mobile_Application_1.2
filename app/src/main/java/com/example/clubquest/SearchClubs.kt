@@ -65,10 +65,10 @@ import java.net.URL
 class SearchClubs : ComponentActivity() {
 
     val leagueList = mutableListOf<Teams>()
+
     val list = mutableListOf<String>()
 
     var orientation = false
-
 
     var leagueListAfter = ArrayList<String>()
 
@@ -189,7 +189,6 @@ class SearchClubs : ComponentActivity() {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-//                    .background(Color.Blue)
                 ) {
 
                     Column(
@@ -209,7 +208,6 @@ class SearchClubs : ComponentActivity() {
                         OutlinedTextField(
                             modifier = Modifier
                                 .padding(4.dp)
-//                            .background(Color.Blue)
                                 .fillMaxWidth(),
                             value = keyword,
                             onValueChange = { keyword = it },
@@ -220,14 +218,6 @@ class SearchClubs : ComponentActivity() {
                                 )
                             }
                         )
-//                        TextField(
-//                            modifier = Modifier
-//                                .padding(4.dp)
-////                            .background(Color.Blue)
-//                                .fillMaxWidth(),
-//                            value = keyword,
-//                            onValueChange = { keyword = it }
-//                        )
 
                         Button(
                             onClick = {
@@ -238,7 +228,7 @@ class SearchClubs : ComponentActivity() {
                                     try {
 
                                         // Fetch data
-                                        val result = fetchBooks(keyword)
+                                        val result = fetchClubs(keyword)
 
                                         bookInfoDisplay = result
 
@@ -328,9 +318,8 @@ class SearchClubs : ComponentActivity() {
 
                     Column(
                         modifier = Modifier
-//                            .background(Color.Blue)
                             .fillMaxWidth()
-                            .weight(1.5f)
+                            .weight(2f)
                     ) {
                         
                         if(orientation == false){
@@ -362,7 +351,6 @@ class SearchClubs : ComponentActivity() {
                             var i = 0
 
                             for (e in leagueList){
-//                                displayText2.append("${e.idTeam}\n ${e.Name}\n ${e.strLeague}\n ${e.strAlternate}")
 
                                 i++;
                                 displayText2.append("${i}---------------------\n " +
@@ -405,7 +393,7 @@ class SearchClubs : ComponentActivity() {
         }
     }
 
-    suspend fun fetchBooks(keyword: String): String {
+    suspend fun fetchClubs(keyword: String): String {
 
         var test = keyword.replace(" ", "%20")
 
@@ -430,8 +418,6 @@ class SearchClubs : ComponentActivity() {
                 con.disconnect()
             }
         }
-//        return stb.toString()
-        // Call parseJSON function here
         val parsedData = parseJSON(stb)
         // Return the parsed data
         return parsedData
